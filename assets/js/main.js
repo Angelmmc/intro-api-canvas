@@ -11,6 +11,7 @@ drawLines();
 function drawSquare() {
     const ctx = canvasSquare.getContext("2d");
     if (canvasSquare.getContext) {
+        ctx.fillStyle = "yellow";
         ctx.fillRect(25, 25, 100, 100);
         ctx.clearRect(45, 45, 60, 60);
         ctx.strokeRect(50, 50, 50, 50);
@@ -20,6 +21,7 @@ function drawSquare() {
 function drawTriangle() {
     if (canvasTriangle.getContext) {
         const ctx = canvasTriangle.getContext("2d");
+        ctx.fillStyle = "orange";
         ctx.beginPath();
         ctx.moveTo(25, 100);
         ctx.lineTo(125, 100);
@@ -31,7 +33,7 @@ function drawTriangle() {
 function drawFeather() {
     if (canvasFeather.getContext) {
       const ctx = canvasFeather.getContext("2d");
-  
+      ctx.strokeStyle = "rgb(126, 88, 187)";
       ctx.beginPath();
       ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Círculo externo
       ctx.moveTo(110, 75);
@@ -47,7 +49,7 @@ function drawFeather() {
   function drawLines() {
     if (canvasLines.getContext) {
       const ctx = canvasLines.getContext("2d");
-  
+      ctx.fillStyle = "rgb(0,255,255)";
       // Triángulo relleno
       ctx.beginPath();
       ctx.moveTo(25, 25);
@@ -56,6 +58,7 @@ function drawFeather() {
       ctx.fill();
   
       // Triángulo contorneado
+      ctx.strokeStyle = "rgb(255,0,0)";
       ctx.beginPath();
       ctx.moveTo(125, 125);
       ctx.lineTo(125, 45);
