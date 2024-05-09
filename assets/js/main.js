@@ -3,6 +3,7 @@ const canvasTriangle = document.getElementById("canvasTriangle");
 const canvasFeather = document.getElementById("canvasFeather");
 const canvasLines = document.getElementById("canvasLines");
 const canvasArch = document.getElementById("canvasArch");
+const canvasBezier = document.getElementById("canvasBezier");
 
 
 drawSquare();
@@ -10,6 +11,7 @@ drawTriangle();
 drawFeather();
 drawLines();
 drawArch();
+drawBezier();
 
 function drawSquare() {
   const ctx = canvasSquare.getContext("2d");
@@ -96,6 +98,23 @@ function drawArch() {
         }
       }
     }
+  }
+}
+
+function drawBezier() {
+  if (canvasBezier.getContext) {
+    const ctx = canvasBezier.getContext("2d");
+
+    // Ejemplo de curvas cuadráticas
+    ctx.beginPath();
+    ctx.moveTo(75, 25);
+    ctx.quadraticCurveTo(25, 25, 25, 62.5);
+    ctx.quadraticCurveTo(25, 100, 50, 100);
+    ctx.quadraticCurveTo(50, 120, 30, 125);
+    ctx.quadraticCurveTo(60, 120, 65, 100);
+    ctx.quadraticCurveTo(125, 100, 125, 62.5);
+    ctx.quadraticCurveTo(125, 25, 75, 25);
+    ctx.stroke();
   }
 }
 
