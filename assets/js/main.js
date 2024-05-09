@@ -3,7 +3,7 @@ const canvasTriangle = document.getElementById("canvasTriangle");
 const canvasFeather = document.getElementById("canvasFeather");
 const canvasLines = document.getElementById("canvasLines");
 const canvasArch = document.getElementById("canvasArch");
-const canvasBezier = document.getElementById("canvasBezier");
+const canvasBezierQuadCurve = document.getElementById("canvasBezierQuadCurve");
 
 
 drawSquare();
@@ -11,7 +11,7 @@ drawTriangle();
 drawFeather();
 drawLines();
 drawArch();
-drawBezier();
+drawBezierQuadCurve();
 
 function drawSquare() {
   const ctx = canvasSquare.getContext("2d");
@@ -101,9 +101,9 @@ function drawArch() {
   }
 }
 
-function drawBezier() {
-  if (canvasBezier.getContext) {
-    const ctx = canvasBezier.getContext("2d");
+function drawBezierQuadCurve() {
+  if (canvasBezierQuadCurve.getContext) {
+    const ctx = canvasBezierQuadCurve.getContext("2d");
 
     // Ejemplo de curvas cuadráticas
     ctx.beginPath();
